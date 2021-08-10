@@ -40,6 +40,11 @@ section {
 article.tweet {
   border: 4px solid #2c2c2c;
   padding: 1%;
+  transition: all 0.35s ease;
+}
+
+article.tweet:hover {
+  box-shadow: 5px 5px #9cabd6 ;
 }
 
 article.tweet header {
@@ -53,11 +58,11 @@ article.tweet header {
 article.tweet header .username {
   font-size: 0.8em;
   font-weight: 600;
-  color: #69bde4ce;
+  color: #6998e4ce;
 }
 
 article.tweet .avi {
-  color: #69bde4ce;
+  color: #6998e4ce;
   font-size: 2rem;
 }
 
@@ -71,7 +76,7 @@ article > .tweet-body {
 }
 
 .tweet-body .hashtags {
-  color: #276386;
+  color: #363fb4be;
 }
 
 article.tweet footer {
