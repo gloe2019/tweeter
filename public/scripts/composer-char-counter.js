@@ -1,19 +1,20 @@
 $(document).ready(function() {
-  // --- our code goes here ---
-  //id to target: tweet-text
-  console.log('I\'m ready!');
   
-  $('#tweet-text').on('input', function(event) {
-    // console.log(this);
-    // console.log($(this).val().length);
-    let max = 140;
-    let actChars = $(this).val().length;
-    // console.log(actChars, 'used', (max - actChars), 'left');
-    $(this).parents().find('.counter').text(max - actChars);
-    // counter.text(actChars);
-    if (actChars > max) {
-      $('.counter').css("color", "red");
-    }
-
-  });
+  $('#tweet-text').on('input', onInput);
 });
+
+const onInput = function(event) {
+  let max = 140;
+  let actChars = $(this).val().length;
+ 
+  $(this).parents().find('.counter').text(max - actChars);
+
+
+  if (actChars > max) {
+    $('.counter').addClass('danger'); //add class once
+    return;
+  }
+  
+  $('.counter').removeClass('danger'); // remove class once if statement is falsy...
+  
+};
