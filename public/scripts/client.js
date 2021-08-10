@@ -9,7 +9,25 @@ $(document).ready(function() {
   const target = $('#target');
   target.on('submit', function(event) {
     event.preventDefault();
-    // console.log($(this));
+    //Validate max tweet length;
+    const counter = $('#counter'); //counter
+    const tweetLength = 140 - parseInt(counter.val());
+    console.log(tweetLength);
+    if (tweetLength > 140) {
+      alert('Tweet limit exceeded');
+      return;
+    }
+    const tweetChars = $('#tweet-text').val();
+    console.log('tweetChars:', tweetChars);
+    if (tweetChars === '' || tweetChars === null) {
+      alert('Tweet cannot be empty!');
+      return;
+    }
+    if (tweetChars === 'null') {
+      alert('null is not a valid tweet!');
+      return;
+    }
+  
     const url = $(this).attr('action');
     $.ajax({
       method: 'POST',
