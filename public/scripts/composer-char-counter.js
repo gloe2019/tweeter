@@ -1,9 +1,9 @@
+/* eslint-env jquery*/
 $(document).ready(function() {
-  
   $('#tweet-text').on('input', onInput);
 });
 
-const onInput = function(event) {
+const onInput = function() {
   let max = 140;
   let actChars = $(this).val().length;
  

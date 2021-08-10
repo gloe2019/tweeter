@@ -1,3 +1,4 @@
+/* eslint-env jquery*/
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
@@ -30,7 +31,7 @@ const data = [
 
 
 $(document).ready(function() {
-renderTweets(data);
+  renderTweets(data);
 });
 
 const createTweetElement = (tweetObj) => {
