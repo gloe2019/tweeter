@@ -6,6 +6,9 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: sticky; /*sticky navbar!!*/
+  top: 0;
+  z-index: 10;
 }
 .brand {
   font-family: Bungee, sans-serif;
