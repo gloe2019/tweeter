@@ -56,7 +56,7 @@ article.tweet header {
   margin: 1% 0;
 }
 
-article.tweet header .username {
+article.tweet header .handle {
   font-size: 0.8em;
   font-weight: 600;
   color: #6998e4ce;
@@ -66,9 +66,18 @@ article.tweet .avi {
   color: #6998e4ce;
   font-size: 0.75em;
   font-weight: 600;
+  display: flex;
 }
-.avi i {
+.avi .username {
+  padding-left: 10px;
+  align-self: center;
+}
+.avi i{
   font-size: 1.5rem;
+
+}
+.avi img {
+ width: 40px; 
 }
 
 article > .tweet-body {
