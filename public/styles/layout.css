@@ -63,7 +63,11 @@ article.tweet header .username {
 
 article.tweet .avi {
   color: #6998e4ce;
-  font-size: 2rem;
+  font-size: 0.75em;
+  font-weight: 600;
+}
+.avi i {
+  font-size: 1.5rem;
 }
 
 article > .tweet-body {
