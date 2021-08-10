@@ -36,11 +36,14 @@
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
 
-  <!-- Timeago JS-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Form-Submit JS-->
+  <script type="text/javascript" src="./scripts/form-submit.js"></script>
 
   <!-- Char Counter JS-->
   <script type='text/javascript' src="./scripts/composer-char-counter.js"></script>
+
+  <!-- Timeago JS-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -66,11 +69,11 @@
   <main class="container">
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
-      <form action="/tweets/" method="POST">
+      <form id='target' action="/tweets/" method="POST">
         <label for="tweet-text"></label>
         <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
         <div class="button-counter">
-          <button type="submit">Tweet</button>
+          <button id='submit-tweet' type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
