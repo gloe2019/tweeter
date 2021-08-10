@@ -41,6 +41,7 @@ article.tweet {
   border: 4px solid #2c2c2c;
   padding: 1%;
   transition: all 0.35s ease;
+  margin-bottom: 3%;
 }
 
 article.tweet:hover {
