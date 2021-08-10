@@ -70,6 +70,10 @@ article > .tweet-body {
   border-bottom: 3px solid #2c2c2c;
 }
 
+.tweet-body .hashtags {
+  color: #276386;
+}
+
 article.tweet footer {
   display: flex;
   justify-content: space-between;
