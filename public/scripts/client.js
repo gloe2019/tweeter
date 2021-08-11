@@ -6,50 +6,9 @@
  */
 
 $(document).ready(function() {
-  const target = $('#target');
-  target.on('submit', function(event) {
-    event.preventDefault();
-    //Validate max tweet length;
-    const counter = $('#counter'); //counter
-    const tweetLength = 140 - parseInt(counter.val());
-    console.log(tweetLength);
-    if (tweetLength > 140) {
-      alert('Tweet limit exceeded');
-      return;
-    }
-    const tweetChars = $('#tweet-text').val();
-    console.log('tweetChars:', tweetChars);
-    if (tweetChars === '' || tweetChars === null) {
-      alert('Tweet cannot be empty!');
-      return;
-    }
-    if (tweetChars === 'null') {
-      alert('null is not a valid tweet!');
-      return;
-    }
-  
-    const url = $(this).attr('action');
-    $.ajax({
-      method: 'POST',
-      url: url,
-      data: $(this).serialize(),
-      success: function(data) {
-        console.log(data);
-      },
-    });
-  });
-
-  const loadTweets = function() {
-    $.ajax('/tweets/', {
-      method: 'GET',
-      success: function(response) {
-        console.log('response', response);
-        renderTweets(response);
-      }
-    });
-  };
-
   loadTweets();
+  $('#target').on('submit', onSubmit);
+
 });
 
 const createTweetElement = (tweetObj) => {
@@ -77,8 +36,67 @@ const createTweetElement = (tweetObj) => {
 };
 
 const renderTweets = (tweetsArr) => {
+  const container = $('#tweets-container');
+  container.empty();
+
   for (const tweet of tweetsArr) {
     const element = createTweetElement(tweet);
-    $('#tweets-container').prepend(element);
+    container.prepend(element);
   }
+};
+
+const loadTweets = function() {
+  $.ajax('/tweets/', {
+    method: 'GET',
+    success: function(response) {
+      console.log('response', response);
+      renderTweets(response);
+
+    } //make this a promise!
+  });
+  // $.get('/tweets/')
+  //   .then()
+};
+
+const onSubmit = function(event) {
+  event.preventDefault();
+  //Validate max tweet length;
+  const counter = $('#counter'); //counter
+  const tweetLength = 140 - parseInt(counter.val());
+  console.log(tweetLength);
+  if (tweetLength > 140) {
+    alert('Tweet limit exceeded');
+    return;
+  }
+  // Validate Tweet content
+  const tweetChars = $('#tweet-text').val();
+  console.log('tweetChars:', tweetChars);
+  if (tweetChars === '' || tweetChars === null) {
+    alert('Tweet cannot be empty!');
+    return;
+  }
+  if (tweetChars === 'null') {
+    alert('null is not a valid tweet!');
+    return;
+  }
+  //Form submission
+  // const url = $(this).attr('action');
+  // $.ajax({
+  //   method: 'POST',
+  //   url: url,
+  //   data: $(this).serialize(),
+  //   success: function(data) {
+  //     renderTweets(data);
+  //     $('#tweets-container').html();
+  //     loadTweets();
+  //   },
+  // });
+  
+  //modern way to do an jquery ajax post
+  const data = $(this).serialize();
+  $.post('/tweets', data)
+    .then(data => {
+      loadTweets();
+    });
+  
 };
