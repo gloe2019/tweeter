@@ -5,11 +5,11 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function() {
-  loadTweets();
-  $('#target').on('submit', onSubmit);
-
-});
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
 const createTweetElement = (tweetObj) => {
   const $tweet = $(`
@@ -21,7 +21,7 @@ const createTweetElement = (tweetObj) => {
       </div>
       <div class='handle'>${tweetObj.user.handle}</div>
     </header>
-    <div class='tweet-body'>${tweetObj.content.text}</div>
+    <div class='tweet-body'>${escape(tweetObj.content.text)}</div>
     <footer>
       <div class='tweet-date'>${timeago.format(tweetObj['created_at'])}</div>
       <div class="tweet-icons">
@@ -38,7 +38,7 @@ const createTweetElement = (tweetObj) => {
 const renderTweets = (tweetsArr) => {
   const container = $('#tweets-container');
   container.empty();
-
+  
   for (const tweet of tweetsArr) {
     const element = createTweetElement(tweet);
     container.prepend(element);
@@ -61,42 +61,41 @@ const loadTweets = function() {
 const onSubmit = function(event) {
   event.preventDefault();
   //Validate max tweet length;
+  $('#error-message').hide();
   const counter = $('#counter'); //counter
   const tweetLength = 140 - parseInt(counter.val());
   console.log(tweetLength);
   if (tweetLength > 140) {
-    alert('Tweet limit exceeded');
+    $('#error-message').find('.error-text').text('Tweet limit exceeded');
+    $('#error-message').slideDown('slow');
     return;
   }
   // Validate Tweet content
   const tweetChars = $('#tweet-text').val();
   console.log('tweetChars:', tweetChars);
   if (tweetChars === '' || tweetChars === null) {
-    alert('Tweet cannot be empty!');
+    $('#error-message').find('.error-text').text('Maybe try writing something first...')
+    $('#error-message').slideDown('slow');
     return;
   }
   if (tweetChars === 'null') {
-    alert('null is not a valid tweet!');
+    $('#error-message').find('.error-text').text('null is not a valid tweet');
+    $('#error-message').slideDown('slow');
     return;
   }
-  //Form submission
-  // const url = $(this).attr('action');
-  // $.ajax({
-  //   method: 'POST',
-  //   url: url,
-  //   data: $(this).serialize(),
-  //   success: function(data) {
-  //     renderTweets(data);
-  //     $('#tweets-container').html();
-  //     loadTweets();
-  //   },
-  // });
-  
+   
   //modern way to do an jquery ajax post
   const data = $(this).serialize();
   $.post('/tweets', data)
     .then(data => {
+      $("#tweet-text").val('');
       loadTweets();
     });
   
 };
+
+$(document).ready(function() {
+  $('#tweet-form').on('submit', onSubmit);
+  $('#error-message').hide();
+  loadTweets();
+});
