@@ -28,3 +28,18 @@ textarea {
 .danger {
   color: red;
 }
+
+#error-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid red;
+  font-size: 0.75em;
+  color: #ff1919c7;
+  font-weight: 600;
+  
+}
+
+#error-message > p {
+  margin: 0.75em;
+}

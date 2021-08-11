@@ -82,8 +82,12 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form id="target" action="/tweets/" method="POST">
+        <div id="error-message">
+          <i class="fas fa-exclamation"></i>
+          <p class="error-text"></p>
+          <i class="fas fa-exclamation"></i>
+        </div>
+        <form id="tweet-form" action="/tweets/" method="POST">
           <label for="tweet-text"></label>
           <textarea
             name="text"
