@@ -47,15 +47,6 @@ nav {
  */
 @media screen and (min-width: 500px) and (max-width: 1024px) {
   nav {
-  height: 120px;
-  width: 100%;
   background-image: url("../images/y-so-serious.png");
-  color: #FFFFFF;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky; /*sticky navbar!!*/
-  top: 0;
-  z-index: 10;
 }
 }

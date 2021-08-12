@@ -9,12 +9,11 @@ const onInput = function() {
  
   $(this).parents().find('.counter').text(max - actChars);
 
-
   if (actChars > max) {
     $('.counter').addClass('danger'); //add class once
     return;
   }
-  
+
   $('.counter').removeClass('danger'); // remove class once if statement is falsy...
   
 };

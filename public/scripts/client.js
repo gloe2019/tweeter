@@ -51,11 +51,8 @@ const loadTweets = function() {
     success: function(response) {
       console.log('response', response);
       renderTweets(response);
-
-    } //you can make this a promise!
+    }
   });
-  // $.get('/tweets/')
-  //   .then()
 };
 
 const onSubmit = function(event) {
@@ -84,10 +81,10 @@ const onSubmit = function(event) {
     return;
   }
    
-  //modern way to do an jquery ajax post
+  //modern way to do jquery ajax post
   const data = $(this).serialize();
   $.post('/tweets', data)
-    .then(data => {
+    .then(() => {
       $("#tweet-text").val('');
       loadTweets();
     });
