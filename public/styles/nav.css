@@ -32,7 +32,7 @@ nav {
 
 .nav-tweet i {
   align-self: center;
-  color: red;
+  color: #3D7AB8;
   animation: bounce 2s infinite
   
 }
@@ -49,8 +49,6 @@ nav {
   nav {
   height: 120px;
   width: 100%;
-  background-color: #359189;
-  /* background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png"); */
   background-image: url("../images/y-so-serious.png");
   color: #FFFFFF;
   display: flex;

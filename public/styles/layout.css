@@ -16,7 +16,7 @@ html {
 
 body {
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: #F8FFE5;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
 
@@ -28,7 +28,7 @@ body {
 
 main {
   width: 90%;
-  background-color: #f4f1ec;
+  background-color: transparent;
   text-align: center;
   margin: auto;
 }
@@ -59,11 +59,11 @@ article.tweet header {
 article.tweet header .handle {
   font-size: 0.8em;
   font-weight: 600;
-  color: #6998e4ce;
+  color: #2EBFA5;
 }
 
 article.tweet .avi {
-  color: #6998e4ce;
+  color: #3ACFB4;
   font-size: 0.75em;
   font-weight: 600;
   display: flex;
@@ -102,11 +102,11 @@ article.tweet footer {
 }
 
 .tweet-icons {
-color: #273886
+color: #50587C;
 }
 
 .tweet-icons i:hover {
-  color: #b99e04;
+  color: #7DDE92;
 }
 
 #back-up-btn {
@@ -118,12 +118,12 @@ color: #273886
  right: 10px;
 }
 #back-up-btn>i {
-color: #bd3434;
+color: #3D7AB8;
 font-size: 2em;
 }
 
 #back-up-btn>i:hover {
-  color: #ec0505;
+  color: #6699cc;
   cursor: pointer;
 }
 
