@@ -1,3 +1,7 @@
+
+
+
+
 # Tweeter Project
 
 Tweeter is a simple, single-page Twitter clone.
@@ -18,4 +22,4 @@ Tweeter is a simple, single-page Twitter clone.
 - md5
 
 ## Demo
-[Demo](public/images/Tweeter-demo.mp4)
+[Demo](https://user-images.githubusercontent.com/46451257/129250475-83f5f8af-3fd9-42a5-a3b1-916c7c29143e.mp4)
