@@ -21,8 +21,42 @@ nav {
   display: flex;
   flex-direction: column;
 }
-.nav-tweet i {
-  align-self: center;
-  color: red
+
+.nav-tweet button {
+  background: transparent;
+  outline: none;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
+.nav-tweet i {
+  align-self: center;
+  color: red;
+  animation: bounce 2s infinite
+  
+}
+
+@keyframes bounce {
+  50% {transform: translateY(10px) }
+  100% {transform: translateY((-5px))}
+}
+
+/*
+- Tablet: 768px - 1024px
+ */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  nav {
+  height: 120px;
+  width: 100%;
+  background-color: #359189;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky; /*sticky navbar!!*/
+  top: 0;
+  z-index: 10;
+}
+}
