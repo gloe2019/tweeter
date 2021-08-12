@@ -12,8 +12,8 @@ To use, just click the `Write a new tweet` button in the navbar, and have at it!
 5. Tweet your heart out!
 
 ## Screenshots
-!["Tweeter-Desktop"](./public/images/tweet-newtweet.png)
-!["Tweeter-Mobile"](./public/images/tweet-mobile2.png)
+!["Tweeter-Desktop"](./docs/tweet-newtweet.png)
+!["Tweeter-Mobile"](./docs/tweet-mobile2.png)
 
 ## Dependencies
 
