@@ -40,6 +40,15 @@
       referrerpolicy="no-referrer"
     />
 
+    <!-- Button CSS-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bttn.css/0.2.4/bttn.min.css"
+      integrity="sha512-/2285SnGiTHjSKBkJzedsJ8wwSP0j74ZQyusMQ9j5Z1RtyKqZ3XtfS8hVp8OadLs2uq+8V6/n+CyqUNTO/UpYg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -96,7 +105,9 @@
               placeholder="What are you humming about?"
             ></textarea>
             <div class="button-counter">
-              <button id="submit-tweet" type="submit">Tweet</button>
+              <button class="bttn-pill bttn-md" id="submit-tweet" type="submit">
+                Tweet
+              </button>
               <output
                 id="counter"
                 name="counter"
@@ -110,7 +121,7 @@
         <section id="tweets-container"></section>
       </main>
       <button id="back-up-btn">
-        <i class="fas fa-arrow-alt-circle-up"></i>
+        <i class="fas fa-chevron-circle-up"></i>
       </button>
     </div>
   </body>
