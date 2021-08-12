@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="top">
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
@@ -66,43 +66,52 @@
     <nav>
       <span class="brand">tweeter</span>
       <div class="nav-tweet">
-        <span><strong>Write</strong> a new tweet </span>
+        <button id="tweet-button"><b>Write</b> a new tweet</button>
         <i class="fas fa-angle-double-down"></i>
       </div>
     </nav>
-    <header class="head">
-      <div>
-        <img src="/images/profile-hex.png" />
-      </div>
-      <!-- <br> -->
-      <div>
-        <h2><b>Jenna</b> Jetson</h2>
-      </div>
-    </header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <div id="error-message">
-          <i class="fas fa-exclamation"></i>
-          <p class="error-text"></p>
-          <i class="fas fa-exclamation"></i>
+    <div class="page-content">
+      <header class="head">
+        <div>
+          <img src="/images/profile-hex.png" />
         </div>
-        <form id="tweet-form" action="/tweets/" method="POST">
-          <label for="tweet-text"></label>
-          <textarea
-            name="text"
-            id="tweet-text"
-            placeholder="What are you humming about?"
-          ></textarea>
-          <div class="button-counter">
-            <button id="submit-tweet" type="submit">Tweet</button>
-            <output id="counter" name="counter" class="counter" for="tweet-text"
-              >140</output
-            >
+        <!-- <br /> -->
+        <div>
+          <h2><b>Jenna</b> Jetson</h2>
+        </div>
+      </header>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <div id="error-message">
+            <i class="fas fa-exclamation"></i>
+            <p class="error-text"></p>
+            <i class="fas fa-exclamation"></i>
           </div>
-        </form>
-      </section>
-      <section id="tweets-container"></section>
-    </main>
+          <form id="tweet-form" action="/tweets/" method="POST">
+            <label for="tweet-text"></label>
+            <textarea
+              name="text"
+              id="tweet-text"
+              placeholder="What are you humming about?"
+            ></textarea>
+            <div class="button-counter">
+              <button id="submit-tweet" type="submit">Tweet</button>
+              <output
+                id="counter"
+                name="counter"
+                class="counter"
+                for="tweet-text"
+                >140</output
+              >
+            </div>
+          </form>
+        </section>
+        <section id="tweets-container"></section>
+      </main>
+      <button id="back-up-btn">
+        <i class="fas fa-arrow-alt-circle-up"></i>
+      </button>
+    </div>
   </body>
 </html>
