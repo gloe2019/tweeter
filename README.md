@@ -18,4 +18,4 @@ Tweeter is a simple, single-page Twitter clone.
 - md5
 
 ## Demo
-[Demo](public/images/Tweeter-demo.mkv)
+[Demo](public/images/Tweeter-demo.mp4)
