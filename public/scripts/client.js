@@ -5,7 +5,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const escape = function (str) {
+const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -52,7 +52,7 @@ const loadTweets = function() {
       console.log('response', response);
       renderTweets(response);
 
-    } //make this a promise!
+    } //you can make this a promise!
   });
   // $.get('/tweets/')
   //   .then()
@@ -74,7 +74,7 @@ const onSubmit = function(event) {
   const tweetChars = $('#tweet-text').val();
   console.log('tweetChars:', tweetChars);
   if (tweetChars === '' || tweetChars === null) {
-    $('#error-message').find('.error-text').text('Maybe try writing something first...')
+    $('#error-message').find('.error-text').text('Maybe try writing something first...');
     $('#error-message').slideDown('slow');
     return;
   }
@@ -103,10 +103,29 @@ const showHideTweet = function() {
   }
 };
 
+const backToTop = function() {
+  window.scrollTo(0,0);
+  $('.new-tweet').slideDown('slow');
+  $('#tweet-text').focus();
+};
+
+const onScroll = function() {
+  if ($(this).scrollTop() > 100) {
+    $('.nav-tweet').hide();
+    $('#back-up-btn').show();
+  } else {
+    $('.nav-tweet').show();
+    $('#back-up-btn').hide();
+  }
+};
+
 $(document).ready(function() {
   $('#tweet-form').on('submit', onSubmit);
   $('#error-message').hide();
   $('.new-tweet').hide();
+  $('#back-up-btn').hide();
   loadTweets();
   $('#tweet-button').on('click', showHideTweet);
+  $(window).on('scroll', onScroll);
+  $('#back-up-btn').on('click', backToTop);
 });
