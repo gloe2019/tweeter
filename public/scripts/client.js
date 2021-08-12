@@ -94,8 +94,19 @@ const onSubmit = function(event) {
   
 };
 
+const showHideTweet = function() {
+  if ($('.new-tweet').is(':visible')) {
+    $('.new-tweet').slideUp('slow');
+  } else {
+    $('.new-tweet').slideDown('slow');
+    $('#tweet-text').focus();
+  }
+};
+
 $(document).ready(function() {
   $('#tweet-form').on('submit', onSubmit);
   $('#error-message').hide();
+  $('.new-tweet').hide();
   loadTweets();
+  $('#tweet-button').on('click', showHideTweet);
 });
