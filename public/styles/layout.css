@@ -108,3 +108,55 @@ color: #273886
 .tweet-icons i:hover {
   color: #b99e04;
 }
+
+#back-up-btn {
+ background: transparent;
+ outline: none;
+ border: none;
+ position:fixed;
+ bottom: 20px;
+ right: 10px;
+}
+#back-up-btn>i {
+color: #bd3434;
+font-size: 2em;
+}
+
+#back-up-btn>i:hover {
+  color: #ec0505;
+  cursor: pointer;
+}
+
+/* Breakpoints:
+- Desktop: 1024px+ */
+@media screen and (min-width: 1024px) {
+  .page-content {
+    display: flex;
+    flex-direction: row;
+  }
+  .head {
+    margin: 3%; 
+    padding: 2%;
+    height: 45vh;
+    width: 40vw;
+  }
+  
+  .container {
+    margin: 0 3% 0 5%;
+  }
+}
+
+/*
+- Tablet: 768px - 1024px
+*/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+.page-content {
+  display: flex;
+  flex-direction: column;
+}
+}
+
+
+
+
+
