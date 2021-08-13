@@ -86,6 +86,7 @@ const onSubmit = function(event) {
   $.post('/tweets', data)
     .then(() => {
       $("#tweet-text").val('');
+      $('#counter').val(140);
       loadTweets();
     });
   
